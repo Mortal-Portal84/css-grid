@@ -1,0 +1,53 @@
+.box {
+  /* задать всем оставшимся ("неявным") рядам высоту */
+  /*grid-auto-rows: 85px;*/
+
+  /* аналогично с колонками */
+  grid-auto-columns: 130px minmax(120px, 220px);
+
+  /* их высоту можно и чередовать */
+  grid-auto-rows: 85px 120px;
+
+  /* по умолчанию, новые элементы появляются в рядах, благодаря свойству: */
+  /*grid-auto-flow: row;*/
+
+  /* но можно изменить на ряды, однако это правило устнавливает,
+  что по кол-ву больше указанных выше рядов быть не может: */
+  /*grid-auto-flow: column;*/
+
+  /* бывает и такое, что когда мы задаём элементу определенное расположение, то образуется пустота между элементами, и что бы она автоматически заполнялась, то применяют след. свойство */
+  grid-auto-flow: dense;
+
+  /* для работы с режимом "Колоноки" */
+  /*grid-auto-flow: column dense;*/
+
+  /* Горизонтально Центрировать контент и т.д. */
+  /*justify-items: center;*/
+  /*justify-items: start;*/
+  /*justify-items: end;*/
+
+  /* Вертикально Центрировать контент и т.д. */
+  /*align-items: center;*/
+
+  /* сокращённая запись justify-items + align-items */
+  /*place-items: center;*/
+  /*place-items: end start;*/
+}
+
+
+/* для работы с примером dense*/
+.item-2 {
+  grid-column: span 2;
+  background-color: #b14dc7;
+}
+
+.item-7 {
+  background-color: deepskyblue;
+  grid-column: 2/4;
+
+  /* Центрировать отдельный элемент*/
+  /*justify-self: center;*/
+  /*align-self: center;*/
+
+  place-self: start end;
+}
